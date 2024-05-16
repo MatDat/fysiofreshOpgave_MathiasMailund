@@ -51,6 +51,7 @@ h2 {
   display: flex;
   margin-bottom: 15px;
   background-color: #ffdd8b;
+  cursor: move;
   padding: 5px;
   border: 1px solid black;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.6);
