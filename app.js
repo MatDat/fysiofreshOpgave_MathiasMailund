@@ -2,13 +2,19 @@ const app = Vue.createApp({
   data() {
     return {
       columns: [
-        { title: "To do", tasks: ["Homework", "Shopping"], newTask: "" },
         {
-          title: "In Progress",
-          tasks: ["Dishes", "Clean Bathroom"],
+          title: "To do",
+          tasks: ["Setup style for index.html", "Login feature"],
           newTask: "",
         },
-        { title: "Done", tasks: ["Clean room"], newTask: "" },
+        {
+          title: "In Progress",
+          tasks: ["Setup database", "Hire the new intern"],
+          newTask: "",
+        },
+        { title: "Stuck", tasks: ["Design index.html"], newTask: "" },
+
+        { title: "Done", tasks: ["Kanban board for Fysiofresh"], newTask: "" },
       ],
     };
   },
@@ -22,7 +28,7 @@ const app = Vue.createApp({
     },
     mouseoverHandler(event) {
       const element = event.target;
-      element.style.backgroundColor = "#ffc026";
+      element.style.backgroundColor = "#d3d3d3";
       element.style.transition = "background-color 0.2s ease"; // Add transition
     },
 

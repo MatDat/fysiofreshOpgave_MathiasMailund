@@ -21,9 +21,9 @@ ul {
 h2 {
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #fdb5b2;
+  color: black;
   text-align: center;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+  /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9); */
 }
 .kanban-container {
   display: flex;
@@ -79,5 +79,5 @@ button {
 }
 button:hover {
   background-color: #67fb6d;
-  transition: 0.2s;
+  transition: 0.1s;
 }
