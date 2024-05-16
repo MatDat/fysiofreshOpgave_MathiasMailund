@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Kanban Board</h1>
+
+    <div id="app" class="kanban-container">
+      <div
+        class="kanban-column"
+        v-for="(column, columnIndex) in columns"
+        :key="columnIndex"
+        @dragover.prevent
+        @drop="dropTask(columnIndex)"
+      >
+        <h2>{{ column.title }}</h2>
+        <div
+          class="task"
+          v-for="(task, taskIndex) in column.tasks"
+          :key="taskIndex"
+          draggable="true"
+          @dragstart="dragStart(columnIndex, taskIndex)"
+          @dragover.prevent
+          @drop="dropTask(columnIndex, taskIndex)"
+          @mouseover="mouseoverHandler"
+          @mouseleave="mouseleaveHandler"
+        >
+          {{ task }}
+          <span
+            class="delete-icon"
+            @mouseover="mouseoverHandler"
+            @mouseleave="mouseleaveHandler"
+            @click="deleteTask(columnIndex, taskIndex)"
+            >❌</span
+          >
+        </div>
+        <input
+          type="text"
+          v-model="column.newTask"
+          @keyup.enter="addTask(columnIndex)"
+        />
+        <button @click="addTask(columnIndex)">Add Task</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
